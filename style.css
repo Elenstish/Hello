@@ -58,7 +58,6 @@ body {
 @media(max-width:768px) {
     #login-dp {
         background-color: inherit;
-        color: #fff;
     }
     #login-dp .bottom{
         background-color: inherit;
