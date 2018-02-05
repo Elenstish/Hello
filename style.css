@@ -65,6 +65,16 @@ body {
     }
 }
 /* ---------------MAIN------------- */
+.container {
+    display: flex;
+    justify-content: center;
+    align-content: stretch;
+}
+@media (max-width: 768px) {
+    .container { 
+        flex-direction: column;
+    }
+}
 .list-unstyled a:hover, 
 .list-unstyled a:focus,
 .card-title:hover {    
@@ -72,18 +82,90 @@ body {
     text-decoration: none;
 }
 .post-main,
-.post-title {
+.post-title,
+.post-aside {
     padding: 20px;
     text-align: justify;
 }
-.text-center {
-    text-align: center;
+.post-aside {
+    position: relative;
+}
+@media (max-width: 768px) {
+    .post-aside { 
+        align-items: stretch;
+    }
+}
+.figure-caption {
+    margin-top: -50px;
+}
+.overlay-aside {
+    overflow: hidden;
 }
 .card {
+    width: 250px;
     padding: 10px;
+    margin-right: -200px;
+    opacity: 0;
+    transition: all 0.25s ease;
 }
-.card-title {
-    color: black;
+@media (max-width: 768px) {
+    .card { 
+        opacity: 1;
+        width: 100%;
+    }
+}
+.post-aside.active .card {
+    margin-right: 0;
+    opacity: 1;
+}
+/* ---------------BURGER------------- */
+.buttonmobile {
+    position: absolute;
+    top: 30%;    
+    right: 50px;
+    transition: all 0.25s ease;
+}
+@media (max-width: 768px) {
+    .buttonmobile { 
+        display: none;
+    }
+}
+.post-aside.active .buttonmobile {
+    top: 40px;
+    right: 330px;
+}
+.buttonmobile--line {
+    height: 2px;
+    width: 30px;
+    background: black;
+    margin-bottom: 7px;
+}
+.buttonmobile--line:last-child {
+    margin-bottom: 0;
+}
+/* ---------------CHECK FORM---------- */
+form.card > label {
+    width: 100%;
+    text-align: center;
+}
+/* ------myFontSize------ */
+.fontSize10 {
+    font-size: 10px;
+}
+.fontSize12 {
+    font-size: 12px;
+}
+.fontSize14 {
+    font-size: 14px;
+}
+.fontSize16 {
+    font-size: 16px;
+}
+.fontSize18 {
+    font-size: 18px;
+}
+.fontSize20 {
+    font-size: 20px;
 }
 /* ---------------FOOTER------------- */
 .footer-main {
@@ -93,4 +175,3 @@ body {
 .social a {
     padding-right: 30px;
 }
-

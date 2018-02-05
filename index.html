@@ -65,27 +65,36 @@
 				</ul>
 			</div>
 		</div>	    
-		<section class="container post-main">
-			<div class="row">
-				<div class="main col-lg-8">
-					<div class="col-lg-12 text-center img-main">
-	          			<img src="img/post_1.jpg" alt="post image" class="img-fluid img-thumbnail">
-	        		</div>
-	        		<div class="post-title">
-	          			<h1>Lorem ipsum dolor.</h1>
-	          			<span class="post-date">Date : 2012-03-11</span>
-	          			<p>
-	              		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		              	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		              	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		              	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		              	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		              	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-		              	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia sint placeat praesentium dolorum minima, et laborum similique cupiditate minus nemo qui tempore corporis eum quisquam harum perferendis saepe tempora ipsum. Quia sint placeat praesentium dolorum minima, et laborum similique cupiditate minus nemo qui tempore corporis eum quisquam harum perferendis saepe tempora ipsum. Quia sint placeat praesentium dolorum minima, et laborum similique cupiditate minus nemo qui tempore corporis eum quisquam harum 
-	        			</p>		
-	        		</div>	
-				</div> 
-				<div class="aside col-lg-3 offset-lg-1">
+		<section class="container">
+			<div class="post-main">
+				<div class="text-center img-main">
+	          		<img src="img/post_1.jpg" alt="post image" class="img-fluid img-thumbnail">
+	          		<figcaption class="figure-caption"><a class="nav-link" href="#title">Lorem ipsum dolor.</a></figcaption>
+	        	</div>
+	        	<div class="post-title">
+	          		<h1 id="title">Lorem ipsum dolor.</h1>
+	          		<span class="post-date">Date : 2012-03-11</span>
+	          		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	              	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	              	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	              	consequat. </p>
+	              	<p>Duis aute irure dolor in reprehenderit in voluptate velit esse
+	              	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+	              	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	              	Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+	              	<p> Quia sint placeat praesentium dolorum minima, et laborum similique cupiditate minus nemo qui tempore corporis eum quisquam harum perferendis saepe tempora ipsum. </p>
+	              	<p>Quia sint placeat praesentium dolorum minima, et laborum similique cupiditate minus nemo qui tempore corporis eum quisquam harum perferendis saepe tempora ipsum.</p>
+	              	<p> Quia sint placeat praesentium dolorum minima, et laborum similique cupiditate minus nemo qui tempore corporis eum quisquam harum.
+        			</p>		
+	        	</div>	
+			</div>
+			<div class="post-aside" id="sidebar">
+				<button class="btn btn-primary buttonmobile" type="button" id="burger">
+					<div class="buttonmobile--line bg-light"></div>
+	                <div class="buttonmobile--line bg-light"></div>
+	                <div class="buttonmobile--line bg-light"></div>
+				</button>
+				<div class="overlay-aside">	
 					<div class="sidebar-module text-center card bg-light">
             			<h4>Archives</h4>
             			<ol class="list-unstyled">
@@ -98,28 +107,49 @@
             			</ol>
           			</div>
 					<div class="card bg-light">
-		    			<div class="col-lg-12">
+		    			<div class="img-aside">
 		    				<a href="#"><img class="img-fluid rounded" src="img/img_1.jpg" alt="img_1"></a>
 		    			</div>
 		    			<time class="card-date col-lg-12" datetime="2018-01">January 01, 2018</time>
 		    			<a href="#" class="card-title col-lg-12">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, velit.</a>
 		    		</div>
-		    		<div class="card bg-light">
-		    			<div class="col-lg-12 text-center">
-		    				<a href="#"><img class="img-fluid rounded" src="img/img_2.jpg" alt="img_2"></a>
-		    			</div>
-		    			<time class="card-date col-lg-12" datetime="2017-12">December 01, 2017</time>
-		    			<a href="#" class="card-title col-lg-12">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, animi!</a>
-		    		</div>
-		    		<div class="card bg-light">
-		    			<div class="col-lg-12 text-center">
-		    				<a href="#"><img class="img-fluid rounded" src="img/img_3.jpg" alt="img_3"></a>
-		    			</div>
-		    			<time class="card-date col-lg-12" datetime="2017-11">November 01, 2017</time>
-		    			<a href="#" class="card-title col-lg-12">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam, consequatur.</a>
-		    		</div>
+		    		<form class="card bg-light d-flex flex-row justify-content-center flex-wrap">
+		    			<label for="form">Select font-size</label>
+						<button class="resize mr-2" id="downFont">P -</button> 
+		    			<button class="resize" id="upFont">P+</button>
+					</form>
+		       		<form class="card bg-light d-flex flex-row justify-content-center flex-wrap">
+		    		    <label for="form">Select font-size</label>
+						<div class="form-check">
+							<input type="radio" name="mySize" value="fontSize10">
+							<label for="fontSize10">10px</label>
+						</div>
+						<div class="form-check">
+							<input type="radio" name="mySize" value="fontSize12">
+							<label for="fontSize12">12px</label>
+						</div>
+						<div class="form-check">
+							<input type="radio" name="mySize" value="fontSize14">
+							<label for="fontSize14">14px</label>
+						</div>
+						<div class="form-check">
+							<input type="radio" name="mySize" value="fontSize16">
+							<label for="fontSize16">16px</label>
+						</div>
+						<div class="form-check">
+							<input type="radio" name="mySize" value="fontSize18">
+							<label for="fontSize18">18px</label>
+						</div>
+						<div class="form-check">
+							<input type="radio" name="mySize" value="fontSize20">
+							<label for="fontSize20">20px</label>
+						</div>
+		    		<form>
 		    	</div> 
-		  	</div> 
+		    	<div class="card bg-light">
+		    		<input type="button" value="Remove Last P" id="pfade">
+		    	</div>
+			</div>
 		</section>
 		<footer class="navbar navbar-expand-md bg-secondary text-light justify-content-between">
 			<div class="footer-main">
@@ -137,6 +167,7 @@
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script src="script.js"></script>
 
 </body>
 </html>
