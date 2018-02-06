@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'slim_joe';
+    src: url('fonts/slimjoe-webfont.woff2') format('woff2'),
+         url('fonts/slimjoe-webfont.woff') format('woff');
+    font-style: normal;
+    font-weight: normal;
+}
 body {
     color: #60606e;
 }
@@ -64,7 +71,7 @@ body {
         border-top:0 none;
     }
 }
-/* ---------------MAIN------------- */
+/* ---------------MAIN & ASIDE------------- */
 .container {
     display: flex;
     justify-content: center;
@@ -143,30 +150,35 @@ body {
 .buttonmobile--line:last-child {
     margin-bottom: 0;
 }
-/* ---------------CHECK FORM---------- */
+/*----------------*/
+.myfont-size {
+    margin-bottom: 10px;
+}
+.input-group-append {
+    width: 50px;
+}
+
 form.card > label {
     width: 100%;
     text-align: center;
 }
-/* ------myFontSize------ */
-.fontSize10 {
-    font-size: 10px;
+.form-check {
+    padding-right: .5rem;
 }
-.fontSize12 {
-    font-size: 12px;
+/* ------myFontFamily------ */
+.font-roboto {
+    font-family: 'Roboto', sans-serif;
 }
-.fontSize14 {
-    font-size: 14px;
+.font-open {
+    font-family: 'Open Sans', sans-serif;
 }
-.fontSize16 {
-    font-size: 16px;
+.font-monts {
+    font-family: 'Montserrat', sans-serif;
 }
-.fontSize18 {
-    font-size: 18px;
+.font-slim {
+    font-family: 'slim_joe';
 }
-.fontSize20 {
-    font-size: 20px;
-}
+
 /* ---------------FOOTER------------- */
 .footer-main {
     font-size: 14px;
