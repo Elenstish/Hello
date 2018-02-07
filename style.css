@@ -154,6 +154,9 @@ body {
 .myfont-size {
     margin-bottom: 10px;
 }
+.myfont-size span {
+    text-align: center;
+}
 .input-group-append {
     width: 50px;
 }
