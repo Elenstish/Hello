@@ -1,62 +1,55 @@
 var sidebar = $('.post-aside');
-var btn = $('button.buttonmobile');
 var maxFont = 24;
 var minFont = 8;
 
 // ---------sidebar
 
-btn.on('click', function(){
+$('#burger').on('click', function(e){
     sidebar.toggleClass('active');
 });
 
 // ------- font-size 
 
-$('#userSize').change(function(event){
-    event.preventDefault();
-    var thisValue = parseInt($(this).val());
-    var newSize = thisValue;
-    
-    if (newSize > maxFont || newSize < minFont) {
-    alert('input number from 8 to 24 only')
-    return;
-    }
-
-    $('p').css('font-size', newSize + 'px'); 
-
-});
-
-$('#userSize').keydown(function(e){
-    if (e.which < 48 || e.which > 57) {
+$('#userSize').on({
+    focus: function(e) {
+        elementValue = $(this).val();
+        $(this).val("");
+        event.preventDefault();
+    },
+    keydown: function(e) {
+        if (e.which < 48 || e.which > 57) {
         alert('integer only')
         event.preventDefault();
-    }    
+        }
+    },
+    change: function(e) {
+    var thisValue = parseInt($(this).val());
+    var newSize = thisValue;    
+        if (newSize > maxFont || newSize < minFont) {
+        alert('input number from 8 to 24 only')
+        return;
+        }
+    $('p').css('font-size', newSize + 'px'); 
+    }
 });
 
-$('#userSize').focus(function(){
-    elementValue = $(this).val();
-    $(this).val("");
+// -----------Color
+
+$('#colorValue').change(function(e){
+    event.preventDefault();
+    var value = $(this).val();
+    var result = value;    
+    $('p').css('background-color', result); 
 });
 
-    
 //--------onclick radio myFontFamily
 
-$('input[name=myFont]').on('change', function() {
+$('input[name=myFont]').change(function(e) {
     $('p').removeClass().addClass($(this).val());
 });
 
 // -----  remove last p-element
 
-$('#pfade').click(function() {
+$('#pFade').click(function(e) {
     $('p').last().remove();
-});
-
-// -----------Color
-
-$('#input_color_value').change(function(event){
-    event.preventDefault();
-    var value = $(this).val();
-    var result = value;
-    
-    $('body').css('background-color', result); 
-
 });
