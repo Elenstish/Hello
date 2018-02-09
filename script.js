@@ -1,48 +1,42 @@
-var sidebar = $('.post-aside');
-var maxFont = 24;
-var minFont = 8;
+var maxFont = 24,
+    minFont = 8;
 
-// ---------sidebar
+// --------- sidebar
 
-$('#burger').on('click', function(e){
-    sidebar.toggleClass('active');
+$('#burger').on('click', function(){
+    $('.post-aside').toggleClass('active');
 });
 
 // ------- font-size 
 
-$('#userSize').on({
-    focus: function(e) {
-        elementValue = $(this).val();
+$('._userSize').on({
+    focus: function() {
+        $(this).val();
         $(this).val("");
-        event.preventDefault();
     },
     keydown: function(e) {
         if (e.which < 48 || e.which > 57) {
         alert('integer only')
-        event.preventDefault();
+        e.preventDefault();
         }
     },
-    change: function(e) {
-    var thisValue = parseInt($(this).val());
-    var newSize = thisValue;    
-        if (newSize > maxFont || newSize < minFont) {
+    change: function() {
+    var thisVal = parseInt($(this).val());       
+        if (thisVal > maxFont || thisVal < minFont) {
         alert('input number from 8 to 24 only')
         return;
         }
-    $('p').css('font-size', newSize + 'px'); 
+    $('p').css('font-size', thisVal + 'px'); 
     }
 });
 
-// -----------Color
+// ----------- Color
 
-$('#colorValue').change(function(e){
-    event.preventDefault();
-    var value = $(this).val();
-    var result = value;    
-    $('p').css('background-color', result); 
+$('._colorValue').change(function(){
+    $('p').css('background-color', $(this).val()); 
 });
 
-//--------onclick radio myFontFamily
+//-------- myFontFamily
 
 $('input[name=myFont]').change(function(e) {
     $('p').removeClass().addClass($(this).val());
@@ -50,6 +44,7 @@ $('input[name=myFont]').change(function(e) {
 
 // -----  remove last p-element
 
-$('#pFade').click(function(e) {
+$('._pDel').click(function() {
     $('p').last().remove();
 });
+
