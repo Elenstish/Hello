@@ -1,0 +1,191 @@
+@font-face {
+    font-family: 'slim_joe';
+    src: url('fonts/slimjoe-webfont.woff2') format('woff2'),
+         url('fonts/slimjoe-webfont.woff') format('woff');
+    font-style: normal;
+    font-weight: normal;
+}
+body {
+    color: #60606e;
+}
+/* ---------------NAVBAR------------- */
+.nav-link:hover, 
+.nav-link:focus {
+    color: #60606e;
+}
+.navbar {
+    font-size: 18px;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+.navbar-brand {
+    padding-left: 14px;
+}
+#login-dp {
+    min-width: 250px;
+    padding: 14px 14px 0;
+    overflow:hidden;
+    background:rgb(255,255,255);
+}
+#login-dp .help-block {
+    font-size:12px;    
+}
+#login-dp .bottom {
+    background:rgba(255,255,255,.8);
+    border-top:1px solid #ddd;
+    clear:both;
+    padding:14px;
+}
+#login-dp .social-buttons {
+    margin:12px 0;   
+}
+#login-dp .social-buttons a{
+    width: 49%;
+}
+#login-dp .form-group {
+    margin-bottom: 10px;
+}
+.btn-fb{
+    color: #fff;
+    background-color:#3b5998;
+}
+.btn-fb:hover {
+    color: #fff;
+    background-color:#496ebc; 
+}
+.btn-tw {
+    color: #fff;
+    background-color:#55acee;
+}
+.btn-tw:hover {
+    color: #fff;
+    background-color:#59b5fa;
+}
+@media(max-width:768px) {
+    #login-dp {
+        background-color: inherit;
+    }
+    #login-dp .bottom{
+        background-color: inherit;
+        border-top:0 none;
+    }
+}
+/* ---------------MAIN & ASIDE------------- */
+.container {
+    display: flex;
+    justify-content: center;
+    align-content: stretch;
+}
+@media (max-width: 768px) {
+    .container { 
+        flex-direction: column;
+    }
+}
+.list-unstyled a:hover, 
+.list-unstyled a:focus,
+.card-title:hover {    
+    color: #60606e;
+    text-decoration: none;
+}
+.post-main,
+.post-title,
+.post-aside {
+    padding: 20px;
+    text-align: justify;
+}
+.post-aside {
+    position: relative;
+}
+@media (max-width: 768px) {
+    .post-aside { 
+        align-items: stretch;
+    }
+}
+.figure-caption {
+    margin-top: -50px;
+}
+.overlay-aside {
+    overflow: hidden;
+}
+.card {
+    width: 250px;
+    padding: 10px;
+    margin-right: -200px;
+    opacity: 0;
+    transition: all 0.25s ease;
+}
+@media (max-width: 768px) {
+    .card { 
+        opacity: 1;
+        width: 100%;
+    }
+}
+.post-aside.active .card {
+    margin-right: 0;
+    opacity: 1;
+}
+/* ---------------BURGER------------- */
+.buttonmobile {
+    position: absolute;
+    top: 30%;    
+    right: 50px;
+    transition: all 0.25s ease;
+}
+@media (max-width: 768px) {
+    .buttonmobile { 
+        display: none;
+    }
+}
+.post-aside.active .buttonmobile {
+    top: 40px;
+    right: 330px;
+}
+.buttonmobile--line {
+    height: 2px;
+    width: 30px;
+    background: black;
+    margin-bottom: 7px;
+}
+.buttonmobile--line:last-child {
+    margin-bottom: 0;
+}
+/*----------------*/
+.myfont-size {
+    margin-bottom: 10px;
+}
+.myfont-size span {
+    text-align: center;
+}
+.input-group-append {
+    width: 50px;
+}
+
+form.card > label {
+    width: 100%;
+    text-align: center;
+}
+.form-check {
+    padding-right: .5rem;
+}
+/* ------myFontFamily------ */
+.font-roboto {
+    font-family: 'Roboto', sans-serif;
+}
+.font-open {
+    font-family: 'Open Sans', sans-serif;
+}
+.font-monts {
+    font-family: 'Montserrat', sans-serif;
+}
+.font-slim {
+    font-family: 'slim_joe';
+}
+
+/* ---------------FOOTER------------- */
+.footer-main {
+    font-size: 14px;
+    padding-left: 30px;
+}
+.social a {
+    padding-right: 30px;
+}

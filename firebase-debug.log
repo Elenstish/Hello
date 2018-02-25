@@ -1,0 +1,41 @@
+[debug] [2018-02-25T19:18:06.215Z] ----------------------------------------------------------------------
+[debug] [2018-02-25T19:18:06.262Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Alex\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-02-25T19:18:06.262Z] CLI Version:   3.17.4
+[debug] [2018-02-25T19:18:06.262Z] Platform:      win32
+[debug] [2018-02-25T19:18:06.262Z] Node Version:  v8.9.4
+[debug] [2018-02-25T19:18:06.262Z] Time:          Sun Feb 25 2018 21:18:06 GMT+0200 (Финляндия (зима))
+[debug] [2018-02-25T19:18:06.262Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-02-25T19:18:06.400Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-02-25T19:18:06.400Z] > authorizing via signed-in user
+[debug] [2018-02-25T19:18:06.416Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-02-25T19:18:06.416Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/2LcTqE1SuBkIhxXkv77PJvaSYc9qWbZ7reP0WxmWvK0',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Sun Feb 25 2018 21:18:06 GMT+0200 (Финляндия (зима))
+[debug] [2018-02-25T19:18:07.307Z] <<< HTTP RESPONSE 200
+[debug] [2018-02-25T19:18:07.363Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/hello-ad19f  
+  
+ Sun Feb 25 2018 21:18:07 GMT+0200 (Финляндия (зима))
+[debug] [2018-02-25T19:18:08.295Z] <<< HTTP RESPONSE 200
+[debug] [2018-02-25T19:18:08.310Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/hello-ad19f/tokens  
+  
+ Sun Feb 25 2018 21:18:08 GMT+0200 (Финляндия (зима))
+[debug] [2018-02-25T19:18:09.111Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'D:\Front-End\qwerty\hello firebase'...
+[info] 
+[debug] [2018-02-25T19:18:09.142Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/hello-ad19f  
+  
+ Sun Feb 25 2018 21:18:09 GMT+0200 (Финляндия (зима))
+[debug] [2018-02-25T19:18:10.231Z] <<< HTTP RESPONSE 200
+[debug] [2018-02-25T19:18:10.231Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/1021016329506/clients/_:getWebAppConfig  
+  
+ Sun Feb 25 2018 21:18:10 GMT+0200 (Финляндия (зима))
+[debug] [2018-02-25T19:18:11.145Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+

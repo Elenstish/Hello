@@ -20,6 +20,7 @@ $('#burger').on('click', function(){
         e.preventDefault();
         }
     },
+    change: function() {
         var thisVal = parseInt($(this).val());       
         if (thisVal > maxFont || thisVal < minFont) {
         alert('input number from 8 to 24 only')
@@ -29,7 +30,7 @@ $('#burger').on('click', function(){
     }
 });*/
 
-$('._userSize').click(function() {
+$('._userSize').change(function() {
     var thisVal = $(this).val();       
         if (thisVal > maxFont || thisVal < minFont) {
         return;
@@ -56,7 +57,7 @@ $('._pDel').click(function() {
 });
  
 // Initialize Firebase
-/*var config = {
+var config = {
 apiKey: "AIzaSyBiDAdDxnjSmn7_48WGxCb7nPq8xcnCB6U",
 authDomain: "hello-da5f4.firebaseapp.com",
 databaseURL: "https://hello-da5f4.firebaseio.com",
@@ -66,6 +67,38 @@ messagingSenderId: "396732252137"
 };
 firebase.initializeApp(config);
 
-var bigOne = document.getElementById('bigOne');
+/*var bigOne = document.getElementById('bigOne');
 var dbRef = firebase.database().ref().child('text');
 dbRef.on('value', snap => bigOne.innerText = snap.val());*/
+
+var uiConfig = {  
+    signInSuccessUrl: 'loggedIn.html',  
+    signInOptions: [  
+    // Указываем провайдеров для Firebase Аутентификации
+    firebase.auth.GoogleAuthProvider.PROVIDER_ID,  
+    firebase.auth.EmailAuthProvider.PROVIDER_ID  
+    ],  
+    // Здесь вы можете специфировать условия к использованию, которые будут показаны при виджете 
+    tosUrl: '<your-tos-url>'  
+};  
+// Инициализирум FirebaseUI виджет   
+var ui = new firebaseui.auth.AuthUI(firebase.auth());  
+// Для начала методы мы подождем пока html полностью загрузиться
+ui.start('#firebaseui-auth-container', uiConfig);  
+
+
+var currentUid = null;  
+firebase.auth().onAuthStateChanged(function(user) {  
+    // Слушатель onAuthStateChanged срабатывает каждый раз когда токен пользователя меняется
+    // Это может случиться когда уже новый пользователь логинится, например.
+    // Или это также может случиться когда токен пользователя истек
+    if (user && user.uid != currentUid) {  
+    // Обноваляем UI когда новый пользователь логинится
+    // В другом случае игнорируем если это обновление токена
+    // Обновляем UID текущего пользователя 
+    currentUid = uid;  
+    } else {  
+    // Операция выхода из приложения. Переустанавливает UID текущего пользователя
+    currentUid = null;  
+    }  
+});  

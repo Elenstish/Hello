@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Roboto" rel="stylesheet">
-
+	<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.6.1/firebaseui.css" />	
 </head>
 <body>
 	<div class="container-fluid">
@@ -21,7 +21,7 @@
 			<div class="navbar-collapse" id="mainMenu">
 				<ul class="navbar-nav ml-auto mt-2 mt-lg-0">
 					<li class="nav-item active">
-				    	<a href="#" class="nav-link">Hello <span class="sr-only">(current)</span></a>
+				    	<a href="#" class="nav-link">Home <span class="sr-only">(current)</span></a>
 				  	</li>
 				  	<li class="nav-item">
 				    	<a href="#" class="nav-link">Portfolio</a>
@@ -30,47 +30,12 @@
 				    	<a href="#" class="nav-link">Contact</a>
 				  	</li>
 	      			<li class="nav-item">
-	      				<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
+	      				<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><b>Hello! </b><span id="name"></span></a>
 						<ul id="login-dp" class="dropdown-menu dropdown-menu-right">
 							<li>
-					 			<div class="row">
-									<div class="col-md-12">Login
-										<form method="post" action="login" accept-charset="UTF-8" id="login-nav">
-											<div class="form-group">
-												<label class="sr-only" for="auth_login">Login</label>
-												<input type="text" class="form-control" id="auth_login" placeholder="Enter login" required>
-											</div>
-											<div class="form-group">
-												<label class="sr-only" for="auth_password">Password</label>
-												<input type="password" class="form-control" id="auth_password" placeholder="Password" required>
-											</div>
-											<div class="help-block text-right"><a href="">Forget the password ?</a></div>
-											<div class="form-group">
-												<button type="submit" class="btn btn-primary btn-block" id="auth">Log in</button>
-											</div>
-										</form>
-										or Registrate
-										<form method="post" action="login" accept-charset="UTF-8" id="login-nav">
-											<div class="form-group">
-												<label class="sr-only" for="register_login">Login</label>
-												<input type="text" class="form-control" id="register_login" placeholder="Enter login" required>
-											</div>
-											<div class="form-group">
-												<label class="sr-only" for="register_password">Password</label>
-												<input type="password" class="form-control" id="register_password" placeholder="Password" required>
-												<label class="sr-only" for="register_confirmation">Password confirmation</label>
-												<input type="password" class="form-control" id=" register_confirmation" placeholder="Password confirmation" required>
-                        					</div>
-											<div class="form-group">
-												<button type="submit" class="btn btn-primary btn-block" id="register">Sign in</button>
-											</div>
-											<div class="checkbox">
-												<label>
-													<input type="checkbox"> keep me logged-in
-												</label>
-											</div>
-								 		</form>
-								 	</div>
+								<div class="form-group">
+									<button disabled class="btn btn-primary btn-block" id="signOut">
+                    				</button>
 								</div>
 							</li>
 						</ul>
@@ -78,14 +43,17 @@
 				</ul>
 			</div>
 		</div>	    
-		<section class="container">
+		<section class="container">  
 			<div class="post-main">
+				<div id="name"></div>
 				<div class="text-center img-main">
 	          		<img src="img/post_1.jpg" alt="post image" class="img-fluid img-thumbnail">
-	          		<div class="figure-caption"><a class="nav-link" href="#title">Lorem ipsum dolor.</a></div>
+	          		<div class="figure-caption"><a class="nav-link" href="#title">Все прошло успешно!</a></div>
 	        	</div>
+	        	<div class="text-center">
+        		</div>
 	        	<div class="post-title">
-	          		<h1 id="title">Lorem ipsum dolor.</h1>
+                    <h1 id="title">Lorem ipsum dolor.</h1>
 	          		<span class="post-date">Date : 2012-03-11</span>
 	          		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 	              	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -178,10 +146,15 @@
 		</footer>	
 	</div>
 
+	<script src="https://www.gstatic.com/firebasejs/4.10.0/firebase.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.10.0/firebase-storage.js"></script>
+	<script src="https://cdn.firebase.com/libs/firebaseui/2.6.1/firebaseui.js"></script>
+		
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-	<script src="script.js"></script>
+
+	<script src="login.js"></script>
 
 </body>
 </html>
