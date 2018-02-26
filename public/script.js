@@ -18,14 +18,24 @@ firebase.initializeApp(config);
 
 var uiConfig = {  
     signInSuccessUrl: 'loggedIn.html',  
-    signInOptions: [  
-        firebase.auth.GoogleAuthProvider.PROVIDER_ID, 
-        firebase.auth.EmailAuthProvider.PROVIDER_ID
+    signInOptions: [ 
+        {
+        provider: firebase.auth.GoogleAuthProvider.PROVIDER_ID, 
+        authMethod: 'https://accounts.google.com',
+        clientId: CLIENT_ID
+        },
+        {
+        provider: firebase.auth.EmailAuthProvider.PROVIDER_ID
+        requireDisplayName: true
+        }
+    }
     ],  
     /*tosUrl: '<your-tos-url>'*/  
 
     tosUrl: 'https://www.google.com',
-    
+    credentialHelper: CLIENT_ID && CLIENT_ID != 'YOUR_OAUTH_CLIENT_ID' ?
+        firebaseui.auth.CredentialHelper.GOOGLE_YOLO :
+        firebaseui.auth.CredentialHelper.ACCOUNT_CHOOSER_COM
 };  
 
 var ui = new firebaseui.auth.AuthUI(firebase.auth());  

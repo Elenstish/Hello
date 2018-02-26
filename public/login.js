@@ -1,41 +1,46 @@
 var maxFont = 24,
     minFont = 8;
 
+$(document).ready(function() {
+
 // --------- sidebar
 
-$('#burger').on('click', function(){
-    $('.post-aside').toggleClass('active');
-});
+    $('#burger').on('click', function(){
+        $('.post-aside').toggleClass('active');
+    });
 
-// ------- font-size 
+    // ------- font-size 
 
-$('._userSize').click(function() {
-    var thisVal = $(this).val();       
-        if (thisVal > maxFont || thisVal < minFont) {
-        return;
-        }
-    $('p').css('font-size', thisVal + 'px'); 
-});
+    $('._userSize').click(function() {
+        var thisVal = $(this).val();       
+            if (thisVal > maxFont || thisVal < minFont) {
+            return;
+            }
+        $('p').css('font-size', thisVal + 'px'); 
+    });
 
-// ----------- Color
+    // ----------- Color
 
-$('._colorValue').change(function(){
-    $('p').css('background-color', $(this).val()); 
-});
+    $('._colorValue').change(function(){
+        $('p').css('background-color', $(this).val()); 
+    });
 
-//-------- myFontFamily
+    //-------- myFontFamily
 
-$('input[name=myFont]').change(function(e) {
-    $('p').removeClass().addClass($(this).val());
-});
+    $('input[name=myFont]').change(function(e) {
+        $('p').removeClass().addClass($(this).val());
+    });
 
-// -----  remove last p-element
+    // -----  remove last p-element
 
-$('._pDel').click(function() {
-    $('p').last().remove();
+    $('._pDel').click(function() {
+        $('p').last().remove();
+    });
+
 });
  
 // ------ Firebase
+
 var config = {
     apiKey: "AIzaSyDmofv8bI3yYBqy7e5chw9ZTd3MBmUYAOo",
     authDomain: "hello-ad19f.firebaseapp.com",
@@ -60,7 +65,6 @@ function toggleSignIn() {
 
 function initApp() {
     firebase.auth().onAuthStateChanged(function (user) {
-
         if (user && user.uid != handleSignedInUser(user)) {
             var displayName = user.displayName;
             var uid = user.uid;
@@ -76,7 +80,13 @@ function initApp() {
 }
 
 var handleSignedInUser = function(user) {
-  document.getElementById('name').textContent = user.displayName;
+    document.getElementById('name').textContent = user.displayName;
+    if (user.photoURL){
+        document.getElementById('photo').src = user.photoURL;
+        document.getElementById('photo').style.display = 'block';
+    } else {
+        document.getElementById('photo').style.display = 'none';
+    }
 };
 
 window.addEventListener('load', initApp);
