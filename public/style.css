@@ -1,3 +1,5 @@
+@import url('"https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Roboto" rel="stylesheet"');
+
 @font-face {
     font-family: 'slim_joe';
     src: url('fonts/slimjoe-webfont.woff2') format('woff2'),
